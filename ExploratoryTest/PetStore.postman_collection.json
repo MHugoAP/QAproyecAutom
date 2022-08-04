@@ -65,7 +65,7 @@
 									"\r",
 									"if(aleatorioAnimals == \"Chicken\"){\r",
 									"    var tagsChicken = [\r",
-									"    \"Campo\", \" Plumas\"\r",
+									"    \"Vive en campo\", \" Tiene Plumas\"\r",
 									"];\r",
 									"    var targAleatorio5 = tagsChicken[Math.floor(Math.random() * tagsChicken.length)];\r",
 									"    pm.environment.set(\"TAGS\", targAleatorio5);\r",
@@ -79,7 +79,14 @@
 							"script": {
 								"exec": [
 									"var requestBody = JSON.parse(request.data);\r",
-									"pm.environment.set(\"id\", requestBody.id);"
+									"pm.environment.set(\"id\", requestBody.id);\r",
+									"\r",
+									"var requestBody = JSON.parse(request.data);\r",
+									"pm.environment.set(\"name\", requestBody.category.name);\r",
+									"\r",
+									"var requestBody = JSON.parse(request.data);\r",
+									"pm.environment.set(\"nameTags\", requestBody.name);\r",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -167,7 +174,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": {{id}},\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+							"raw": "{\r\n  \"id\": {{id}},\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"{{name}}\"\r\n  },\r\n  \"name\": \"doggie\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"String\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -203,7 +210,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URLPETSTORE}}/pet/findByStatus?status=sold",
+							"raw": "{{URLPETSTORE}}/pet/findByStatus?status=available",
 							"host": [
 								"{{URLPETSTORE}}"
 							],
@@ -214,7 +221,17 @@
 							"query": [
 								{
 									"key": "status",
-									"value": "sold"
+									"value": "sold",
+									"disabled": true
+								},
+								{
+									"key": "stauts",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "available"
 								}
 							]
 						}
@@ -326,14 +343,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URLPETSTORE}}/store/order/{{petId}}",
+							"raw": "{{URLPETSTORE}}/store/order/{{id}}",
 							"host": [
 								"{{URLPETSTORE}}"
 							],
 							"path": [
 								"store",
 								"order",
-								"{{petId}}"
+								"{{id}}"
 							]
 						}
 					},
@@ -379,7 +396,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"additionalProp1\": 0,\r\n  \"additionalProp2\": 0,\r\n  \"additionalProp3\": 0\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -533,7 +550,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"id\": \"{{$randomInt}}\",\r\n  \"username\": \"{{$randomUserName}}\",\r\n  \"firstName\": \"{{$randomFirstName}}\",\r\n  \"lastName\": \"{{$randomLastName}}\",\r\n  \"email\": \"{{$randomEmail}}\",\r\n  \"password\": \"{{$randomPassword}}\",\r\n  \"phone\": \"{{$randomPhoneNumber}}\",\r\n  \"userStatus\": 0\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -590,7 +607,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\"string\"",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
