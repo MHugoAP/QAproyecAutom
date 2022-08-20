@@ -21,7 +21,7 @@ Feature: Service client delete
     And match response == <expected>
 
     Examples:
-      | idBody     | code | expected                                                                                               |
-      | 9876543211 | 404  | ""                                                                                                     |
-      | numeroUno  | 404  | {"code": "#number","type": "#string","message": "#string"}                                             |
-      |            | 405  | <?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiResponse><type>unknown</type></apiResponse> |
+      | idBody    | code | expected                                                                                               |
+      | "#$%&"    | 404  | {"code": "#number","type": "#string","message": "#string"}                                             |
+      | numeroUno | 404  | {"code": "#number","type": "#string","message": "#string"}                                             |
+      |           | 405  | <?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiResponse><type>unknown</type></apiResponse> |
