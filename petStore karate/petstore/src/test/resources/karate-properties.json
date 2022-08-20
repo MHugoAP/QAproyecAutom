@@ -1,8 +1,9 @@
 {
   "dev": {
     "url": "https://petstore.swagger.io/v2/",
-    "id": 300,
-    "nameCategory": "Dog",
-    "tagsName": "Husky"
+    "idBody": 57,
+    "nameCategory": "Ayuda ciudadana",
+    "nameCategory2": "OSO",
+    "tagsName": "Estados Unidos"
   }
 }
