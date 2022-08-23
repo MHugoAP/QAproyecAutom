@@ -1,3 +1,4 @@
+@updatesAPet
 Feature: Service client PUT
   As AQ Automation
   I want to updates a pet by petId

@@ -1,3 +1,4 @@
+@findPetById
 Feature: Service client GET
   As AQ Automation
   I want to get for a pet by id
@@ -5,13 +6,14 @@ Feature: Service client GET
 
   Background: consume service
     * url url
-
+    @ignore
   Scenario: Check the service GET method
 
     Given path 'pet', idBody
     When method GET
     Then status 200
 
+@outlineFind
   Scenario Outline: GET a pet with invalid values an id in the url
 
     Given path 'pet', <idExample>
