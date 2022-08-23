@@ -1,0 +1,6 @@
+#ignore .idea
+.idea/
+#ignore target
+/target/
+request.iml
+petstore.iml
