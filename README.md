@@ -1,6 +1,7 @@
 # PetStore Automation
 ***
 Author: Miguel Hugo Alcántara Pérez (CTFL)
+***
 Automation of matching to the requested endpoints along with their method (POST, PUT, GET, DELETE).
 
 ##Background: https://petstore.swagger.io/v2
@@ -39,4 +40,21 @@ A small introduction of the installation
 5.	To install Git, we execute the .exe file, follow the steps requested from it and proceed to open said program. The next thing is to configure git globally, you have to have a registered account on GitHub (https://github.com/)
 ***
 ### project-structure
-The project will have this structure (image.png)
+The project will have this structure
+Request > src > test > java > karate > request > cliente > clientRunner.java (will have all java classes)
+					                           > create > CreateRunner.java
+                                        AllFeature.java (Will execute all features sequentially)
+		       > resourse > karate > request > petStore > AddPet > AddNewPet.feature (all folders along with their feature)
+                                                        > DeletePet > DeletePet.feature
+               karate-config.js
+pom.xml
+***
+### feature-execution
+In order to execute the features, you need an execution order in the runners, its correct execution would be:
+1. Execute the AddNewPet runner making it call the corresponding feature
+2. from there goes FindPetId and get your information
+3. Then UpdatePet to change pet data
+4. finally the one for DeletePet is last because we could not search for a pet that has already been eliminated, it must have an order.
+***
+###execute-java-class
+Each feature has its own class making it easier to execute one by one, to execute all the features, you will have to use the AllFeature class to obtain the html provided by cucumber, giving us a better experience in terms of reports.

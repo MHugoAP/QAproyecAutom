@@ -8,7 +8,7 @@ Feature: Service client PUT
     * url url
 
   Scenario: Check the service PUT method
-    * def responseOk = read('classpath:karate/petstore/ResponseOkUpdatesPet.json')
+    * def responseOk = read('classpath:karate/PetStore/UpdatesPet/ResponseOkUpdatesPet.json')
     * def requestCreate = {"id": '#(idBody)',"category": {"id": 1,"name": '#(nameCategory)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
 
     Given path 'pet'

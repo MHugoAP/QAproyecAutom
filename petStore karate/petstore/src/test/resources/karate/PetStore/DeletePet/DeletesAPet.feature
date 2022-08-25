@@ -7,14 +7,12 @@ Feature: Service client delete
   Background: consume service
     * url url
 
-    @happyPathDelet
   Scenario: Check the service DELETE method
 
     Given path 'pet', idBody
     When method DELETE
     Then status 200
 
-      @ignore
   Scenario Outline: DELETE a pet with values an id in the url
     * def idPet = '<idBody>'
 

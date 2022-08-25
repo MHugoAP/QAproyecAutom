@@ -4,6 +4,13 @@
     "idBody": 57,
     "nameCategory": "Ayuda ciudadana",
     "nameCategory2": "OSO",
-    "tagsName": "Estados Unidos"
+    "tagsName": "Estados Unidos",
+    "id": 123,
+    "username": "miguelHugo",
+    "firstName": "Miguel Hugo",
+    "lastName": "Alcántara",
+    "email": "ayudaciudadana@hotmail.com",
+    "password": "123asd",
+    "phone": 783834029
   }
 }
