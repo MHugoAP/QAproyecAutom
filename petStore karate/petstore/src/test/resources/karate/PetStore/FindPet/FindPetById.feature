@@ -6,14 +6,15 @@ Feature: Service client GET
 
   Background: consume service
     * url url
-    @ignore
+
+  @ignore
   Scenario: Check the service GET method
 
     Given path 'pet', idBody
     When method GET
     Then status 200
 
-@outlineFind
+  @outlineFind
   Scenario Outline: GET a pet with invalid values an id in the url
 
     Given path 'pet', <idExample>

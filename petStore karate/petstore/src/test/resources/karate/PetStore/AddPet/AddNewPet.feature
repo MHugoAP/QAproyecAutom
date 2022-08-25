@@ -7,7 +7,6 @@ Feature: Service client POST
   Background: consume service
     * url url
 
-    @ignoreScenario
   Scenario: Check the service POST method
     * def newPetCreate = {"id": '#(idBody)',"category": {"id": 1,"name": '#(nameCategory)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
 
@@ -15,8 +14,13 @@ Feature: Service client POST
     And request newPetCreate
     When method POST
     Then status 200
+    And assert response.id == idBody
+    And assert response.category.name == nameCategory
+    And assert response.category.id == 1
+    And assert response.name == "doggie"
+    And assert response.status == "available"
 
-  @ignoreScenarioOutline
+  
   Scenario Outline: POST a pet with values an id
     * def requestBody = {"id": <idBody>,"category": {"id": 1,"name": '#(nameCategory)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
 
