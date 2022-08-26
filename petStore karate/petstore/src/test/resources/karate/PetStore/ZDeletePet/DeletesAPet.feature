@@ -1,4 +1,4 @@
-@delete
+@Zdelete
 Feature: Service client delete
   As AQ Automation
   I want to delete a pet in PetStore
