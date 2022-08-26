@@ -1,7 +1,7 @@
 {
   "id": "#number",
   "category": {
-    "id": "##string",
+    "id": "#number",
     "name": "#string"
   },
   "name": "#string",
