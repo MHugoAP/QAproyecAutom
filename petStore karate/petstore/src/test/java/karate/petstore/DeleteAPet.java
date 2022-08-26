@@ -1,6 +1,5 @@
 package karate.petstore;
 
-import com.intuit.karate.KarateOptions;
 import com.intuit.karate.junit5.Karate;
 public class DeleteAPet {
     @Karate.Test
