@@ -8,10 +8,17 @@ Feature: Service client GET
     * url url
 
   Scenario: Check the service GET method
-
+    * def responseGet = read('classpath:karate/PetStore/FindPet/ResponseOkFindPetId.json')
     Given path 'pet', idBody
     When method GET
     Then status 200
+    And match response == responseGet
+    And assert response.id == idBody
+    And assert response.category.id == 1
+    And assert response.category.name == nameCategory
+    And assert response.tags.id == 1
+    And assert response.tags.name == tagsName
+
 
   Scenario Outline: GET a pet with invalid values an id in the url
 
