@@ -7,6 +7,7 @@ Feature: Service client GET
   Background: consume service
     * url url
 
+  @findPetScenarioOne
   Scenario: Check the service GET method
     * def responseGet = read('classpath:karate/PetStore/FindPet/ResponseOkFindPetId.json')
     Given path 'pet', idBody
@@ -15,11 +16,8 @@ Feature: Service client GET
     And match response == responseGet
     And assert response.id == idBody
     And assert response.category.id == 1
-    And assert response.category.name == nameCategory
-    And assert response.tags.id == 1
-    And assert response.tags.name == tagsName
 
-
+  @findPetScenarioTwo
   Scenario Outline: GET a pet with invalid values an id in the url
 
     Given path 'pet', <idExample>
