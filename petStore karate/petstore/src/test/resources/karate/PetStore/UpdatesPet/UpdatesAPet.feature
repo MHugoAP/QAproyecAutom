@@ -9,13 +9,16 @@ Feature: Service client PUT
 
   Scenario: Check the service PUT method
     * def responseOk = read('classpath:karate/PetStore/UpdatesPet/ResponseOkUpdatesPet.json')
-    * def requestCreate = {"id": '#(idBody)',"category": {"id": 1,"name": '#(nameCategory)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
+    * def requestCreate = {"id": '#(idBody)',"category": {"id": 1,"name": '#(nameCategory2)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
 
     Given path 'pet'
     And request requestCreate
     When method PUT
     Then status 200
     And match response == responseOk
+    And assert response.id == idBody
+    And assert response.category.name == nameCategory2
+
 
   Scenario Outline: Update a pet with invalid values an id in the url
     * def requestBody = {"id": <idExample>,"category": {"id": 1,"name": '#(nameCategory2)'},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 1,"name": '#(tagsName)'}],"status": "available"}
