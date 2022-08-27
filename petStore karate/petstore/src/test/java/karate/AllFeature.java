@@ -13,7 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-@KarateOptions(tags = {"@addNewPet,@findPetById,@updatePet,@Zdelete"})
+@KarateOptions(tags = {"@addNewPet,@findPetById,@updatePet,@Zdelete,@createUser,@loginUser"})
 
 public class AllFeature {
     public static void generateReport(String karateOutputPath){
