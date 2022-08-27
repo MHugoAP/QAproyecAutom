@@ -9,8 +9,10 @@ Feature: Login user whit method GET
 
   @loginUserStatus200
   Scenario: Login user whit method GET
+    * def requestCreate = read('classpath:karate/User/LoginUser/ResponseCreateLogin.json')
 
     Given path 'user', 'login'
+    And request responseCreate.username, responseCreate.password
     When method GET
     Then status 200
 
