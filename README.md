@@ -58,3 +58,4 @@ In order to execute the features, you need an execution order in the runners, it
 ***
 ###execute-java-class
 Each feature has its own class making it easier to execute one by one, to execute all the features, you will have to use the AllFeature class to obtain the html provided by cucumber, giving us a better experience in terms of reports.
+To execute all the functionalities it is necessary to call them in order through the tags in the runner class AllFeature| 
