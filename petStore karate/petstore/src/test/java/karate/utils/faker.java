@@ -1,12 +1,8 @@
-package karate.Utils;
+package karate.utils;
 
 import com.github.javafaker.Faker;
-import org.glassfish.jersey.karate.message.internal.MsgTraceEvent;
 
-import java.io.File;
-import java.nio.file.FileSystem;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class faker {
 
@@ -14,6 +10,7 @@ public class faker {
         ArrayList<String> lista = new ArrayList<String>();
 
         Faker faker = new Faker();
+
         String firstNameFaker = faker.name().firstName();
         String lastNameFaker = faker.name().lastName();
        // System.out.println(firstNameFaker + " " + lastNameFaker);
@@ -27,9 +24,9 @@ public class faker {
         }
 
         for (int i = 100; i < 200; i++) {
-            String first = faker.name().firstName();
-            String last = faker.name().firstName();
-            String category = faker.animal().name();
+            lista.add(firstNameFaker);
+            lista.add(lastNameFaker);
         }
+       // FileSystem.setDefaultFileSystem("data.js", JsonFormat.Feature(, null, "\t"));
     }
 }
