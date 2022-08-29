@@ -12,7 +12,7 @@ Feature: Login user whit method GET
     * def requestCreate = read('classpath:karate/User/LoginUser/ResponseCreateLogin.json')
 
     Given path 'user', 'login'
-    And request responseCreate.username, responseCreate.password
+    And request requestCreate.username, requestCreate.password
     When method GET
     Then status 200
 
