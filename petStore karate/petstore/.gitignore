@@ -4,3 +4,8 @@
 /target/
 request.iml
 petstore.iml
+data.js
+package-lock.json
+package.json
+node_modules/
+src/test/java/Utis/.ignore
